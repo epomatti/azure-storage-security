@@ -14,3 +14,8 @@ Create the test infrastructure and storage:
 terraform init
 terraform apply -auto-approve
 ```
+
+
+## Stored Access Policy
+
+https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
