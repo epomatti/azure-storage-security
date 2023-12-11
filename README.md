@@ -44,6 +44,16 @@ Additional comment on number of storages:
 
 Check the documentation: [Access Tiers][3]
 
+## Blob types
+
+- Block: Binary or text files
+- Append: Logs
+- Page: Disks
+
+## Authorization
+
+Check the documentation for [authorization options][4].
+
 ## Stored Access Policy
 
 https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
@@ -62,3 +72,4 @@ Check the private DNS zones for [Storage][1].
 [1]: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
 [2]: https://learn.microsoft.com/en-us/training/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need
 [3]: https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers
+[4]: https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies
