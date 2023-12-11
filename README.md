@@ -26,6 +26,24 @@ Additional comment on number of storages:
 
 > Typically, your data diversity, cost sensitivity, and tolerance for management overhead determine the number of storage accounts you need.
 
+## Common usages
+
+- Browser uploads
+- Distributed access
+- Streaming data
+- Archiving and recovery
+- Application access
+
+## Public Access Level
+
+- **Private**: (Default) Prohibit anonymous access to the container and blobs.
+- **Blob**: Allow anonymous public read access for the blobs only.
+- **Container**: Allow anonymous public read and list access to the entire container, including the blobs.
+
+## Access Tiers
+
+Check the documentation: [Access Tiers][3]
+
 ## Stored Access Policy
 
 https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
@@ -43,3 +61,4 @@ Check the private DNS zones for [Storage][1].
 
 [1]: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
 [2]: https://learn.microsoft.com/en-us/training/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need
+[3]: https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers

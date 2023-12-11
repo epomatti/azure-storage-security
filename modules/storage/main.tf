@@ -13,6 +13,7 @@ resource "azurerm_storage_account" "default" {
   account_kind              = "StorageV2"
   enable_https_traffic_only = true
   min_tls_version           = "TLS1_2"
+  access_tier               = "Hot"
 
   # allow_nested_items_to_be_public = false
   # shared_access_key_enabled = true
