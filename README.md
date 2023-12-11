@@ -64,6 +64,8 @@ Must use the REST API.
 
 https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
 
+## Azure Files Authentication
+
 ## Networking
 
 ### Service Endpoints
