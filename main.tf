@@ -32,3 +32,13 @@ module "storage" {
   subnet_id                  = module.vnet.subnet_id
   public_ip_address_to_allow = var.public_ip_address_to_allow
 }
+
+module "privatelink" {
+  source              = "./modules/privatelink"
+  workload            = local.workload
+  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.default.location
+  vnet_id             = module.vnet.vnet_id
+  subnet_id           = module.vnet.subnet_id
+  resource_id         = module.storage.id
+}

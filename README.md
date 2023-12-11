@@ -15,7 +15,16 @@ terraform init
 terraform apply -auto-approve
 ```
 
-
 ## Stored Access Policy
 
 https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
+
+## Networking
+
+### Service Endpoints
+
+Connection via Service Endpoints `Microsoft.Storage`. 
+
+### Private Link
+
+https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
