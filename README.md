@@ -23,8 +23,11 @@ https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-
 
 ### Service Endpoints
 
-Connection via Service Endpoints `Microsoft.Storage`. 
+Connection via Service Endpoints where subnet should have `Microsoft.Storage` endpoint assigned. 
 
 ### Private Link
 
-https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
+Check the private DNS zones for [Storage][1].
+
+
+[1]: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
