@@ -54,7 +54,13 @@ Check the documentation: [Access Tiers][3]
 
 Check the documentation for [authorization options][4].
 
+## User Delegated SAS
+
+Must use the REST API.
+
 ## Stored Access Policy
+
+Must use the REST API.
 
 https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
 
