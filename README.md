@@ -17,6 +17,8 @@ terraform apply -auto-approve
 
 Use the Portal to create the containers `app1` and `app2` with the respective encryption scopes.
 
+Do not enforce default for all blobs, so it is possible to test the scenarios with the app in this repository.
+
 ## Performance
 
 From the documentation:
