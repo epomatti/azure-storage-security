@@ -40,9 +40,10 @@ module "storage" {
   subnet_id                  = module.vnet.subnet_id
   public_ip_address_to_allow = var.public_ip_address_to_allow
 
-  keyvault_id          = module.keyvault.id
-  keyvault_app1_key_id = module.keyvault.app1_key_id
-  keyvault_app2_key_id = module.keyvault.app2_key_id
+  keyvault_id             = module.keyvault.id
+  keyvault_storage_key_id = module.keyvault.storage_key_id
+  keyvault_app1_key_id    = module.keyvault.app1_key_id
+  keyvault_app2_key_id    = module.keyvault.app2_key_id
 }
 
 module "privatelink" {

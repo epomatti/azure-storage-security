@@ -27,6 +27,32 @@ resource "azurerm_role_assignment" "current" {
   principal_id         = data.azurerm_client_config.current.object_id
 }
 
+resource "azurerm_key_vault_key" "storage" {
+  name         = "cmk-storage"
+  key_vault_id = azurerm_key_vault.default.id
+  key_type     = "RSA"
+  key_size     = 2048
+
+  key_opts = [
+    "decrypt",
+    "encrypt",
+    "sign",
+    "unwrapKey",
+    "verify",
+    "wrapKey",
+  ]
+
+  rotation_policy {
+    automatic {
+      time_before_expiry = "P30D"
+    }
+    notify_before_expiry = "P29D"
+    expire_after         = "P90D"
+  }
+
+  depends_on = [azurerm_role_assignment.current]
+}
+
 resource "azurerm_key_vault_key" "app1" {
   name         = "app1-key"
   key_vault_id = azurerm_key_vault.default.id

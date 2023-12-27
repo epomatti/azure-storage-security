@@ -6,6 +6,10 @@ output "vault_uri" {
   value = azurerm_key_vault.default.vault_uri
 }
 
+output "storage_key_id" {
+  value = azurerm_key_vault_key.storage.id
+}
+
 output "app1_key_id" {
   value = azurerm_key_vault_key.app1.id
 }

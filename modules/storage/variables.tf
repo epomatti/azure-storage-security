@@ -26,6 +26,10 @@ variable "keyvault_id" {
   type = string
 }
 
+variable "keyvault_storage_key_id" {
+  type = string
+}
+
 variable "keyvault_app1_key_id" {
   type = string
 }
