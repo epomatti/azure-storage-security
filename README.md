@@ -15,6 +15,8 @@ terraform init
 terraform apply -auto-approve
 ```
 
+Use the Portal to create the containers `app1` and `app2` with the respective encryption scopes.
+
 ## Performance
 
 From the documentation:

@@ -29,13 +29,9 @@ resource "azurerm_storage_account" "default" {
   min_tls_version           = "TLS1_2"
   access_tier               = "Hot"
 
-
-
   # allow_nested_items_to_be_public = false
   # shared_access_key_enabled = true
   # default_to_oauth_authentication = 
-
-
 
   # point in time restore
   # soft delete blos
@@ -94,8 +90,14 @@ resource "azurerm_storage_encryption_scope" "app2" {
 
 # Immutability policy
 
-# resource "azurerm_storage_container" "example" {
-#   name                  = "vhds"
-#   storage_account_name  = azurerm_storage_account.default.name
-#   container_access_type = "private"  
-# }
+
+
+
+### Admin permissions ###
+data "azurerm_client_config" "current" {}
+
+resource "azurerm_role_assignment" "data_contributor" {
+  scope                = azurerm_storage_account.default.id
+  role_definition_name = "Storage Blob Data Contributor"
+  principal_id         = data.azurerm_client_config.current.object_id
+}
