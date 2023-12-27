@@ -15,6 +15,10 @@ resource "azurerm_storage_account" "default" {
   min_tls_version           = "TLS1_2"
   access_tier               = "Hot"
 
+  identity {
+    type = "SystemAssigned"
+  }
+
   # allow_nested_items_to_be_public = false
   # shared_access_key_enabled = true
   # default_to_oauth_authentication = 
@@ -48,25 +52,37 @@ resource "azurerm_storage_account" "default" {
   }
 }
 
+### Key Vault permissions ###
+data "azurerm_client_config" "current" {}
+
+resource "azurerm_role_assignment" "current" {
+  scope                = var.keyvault_id
+  role_definition_name = "Key Vault Crypto Officer"
+  principal_id         = azurerm_storage_account.default.identity[0].principal_id
+}
+
 resource "azurerm_storage_encryption_scope" "app1" {
-  name               = "app1"
-  storage_account_id = azurerm_storage_account.default.id
-  source             = "Microsoft.Storage"
-
-  key_vault_key_id = var.keyvault_app1_key_id
-
+  name                               = "app1"
+  storage_account_id                 = azurerm_storage_account.default.id
+  source                             = "Microsoft.KeyVault"
+  key_vault_key_id                   = var.keyvault_app1_key_id
   infrastructure_encryption_required = true
+
+  depends_on = [azurerm_role_assignment.current]
 }
 
+### Encryption Scopes ###
 resource "azurerm_storage_encryption_scope" "app2" {
-  name               = "app2"
-  storage_account_id = azurerm_storage_account.default.id
-  source             = "Microsoft.Storage"
-
-  key_vault_key_id = var.keyvault_app2_key_id
-
+  name                               = "app2"
+  storage_account_id                 = azurerm_storage_account.default.id
+  source                             = "Microsoft.KeyVault"
+  key_vault_key_id                   = var.keyvault_app2_key_id
   infrastructure_encryption_required = true
+
+  depends_on = [azurerm_role_assignment.current]
 }
+
+# Immutability policy
 
 # resource "azurerm_storage_container" "example" {
 #   name                  = "vhds"

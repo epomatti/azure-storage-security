@@ -14,9 +14,8 @@ resource "azurerm_key_vault" "default" {
   tenant_id           = data.azurerm_client_config.current.tenant_id
   sku_name            = "standard"
 
-  # Required for CMK
-
-  purge_protection_enabled   = false
+  # Required for CMK operations
+  purge_protection_enabled   = true
   soft_delete_retention_days = 7
 
   enable_rbac_authorization = true
