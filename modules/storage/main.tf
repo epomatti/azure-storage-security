@@ -47,3 +47,29 @@ resource "azurerm_storage_account" "default" {
     bypass                     = ["AzureServices"]
   }
 }
+
+resource "azurerm_storage_encryption_scope" "app1" {
+  name               = "app1"
+  storage_account_id = azurerm_storage_account.default.id
+  source             = "Microsoft.Storage"
+
+  key_vault_key_id = var.keyvault_app1_key_id
+
+  infrastructure_encryption_required = true
+}
+
+resource "azurerm_storage_encryption_scope" "app2" {
+  name               = "app2"
+  storage_account_id = azurerm_storage_account.default.id
+  source             = "Microsoft.Storage"
+
+  key_vault_key_id = var.keyvault_app2_key_id
+
+  infrastructure_encryption_required = true
+}
+
+# resource "azurerm_storage_container" "example" {
+#   name                  = "vhds"
+#   storage_account_name  = azurerm_storage_account.default.name
+#   container_access_type = "private"  
+# }

@@ -21,3 +21,11 @@ variable "subnet_id" {
 variable "public_ip_address_to_allow" {
   type = string
 }
+
+variable "keyvault_app1_key_id" {
+  type = string
+}
+
+variable "keyvault_app2_key_id" {
+  type = string
+}
