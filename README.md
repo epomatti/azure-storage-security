@@ -64,11 +64,11 @@ Must use the REST API.
 
 ## Stored Access Policy
 
-Must use the REST API.
-
-https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
+Must use the [REST API][5].
 
 ## Azure Files Authentication
+
+TODO: Need to implement this.
 
 ## Networking
 
@@ -85,3 +85,5 @@ Check the private DNS zones for [Storage][1].
 [2]: https://learn.microsoft.com/en-us/training/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need
 [3]: https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers
 [4]: https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies
+[5]: https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
+
