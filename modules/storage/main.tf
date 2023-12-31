@@ -42,6 +42,7 @@ resource "azurerm_storage_account" "default" {
   # Enable version-level immutability support
 
   blob_properties {
+    # This disabled Legal Hold and version-level immutability
     versioning_enabled = var.blob_versioning_enabled
   }
 
