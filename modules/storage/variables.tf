@@ -37,3 +37,7 @@ variable "keyvault_app1_key_id" {
 variable "keyvault_app2_key_id" {
   type = string
 }
+
+variable "blob_versioning_enabled" {
+  type = bool
+}

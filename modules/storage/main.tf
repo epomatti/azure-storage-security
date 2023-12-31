@@ -38,9 +38,12 @@ resource "azurerm_storage_account" "default" {
   # soft delete containers
   # soft delete files
 
-  # versioning
   # blob change feed
   # Enable version-level immutability support
+
+  blob_properties {
+    versioning_enabled = var.blob_versioning_enabled
+  }
 
 
   # Can only set on creation

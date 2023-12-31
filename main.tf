@@ -44,6 +44,8 @@ module "storage" {
   keyvault_storage_key_id = module.keyvault.storage_key_id
   keyvault_app1_key_id    = module.keyvault.app1_key_id
   keyvault_app2_key_id    = module.keyvault.app2_key_id
+
+  blob_versioning_enabled = var.blob_versioning_enabled
 }
 
 module "privatelink" {
