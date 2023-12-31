@@ -80,6 +80,13 @@ Connection via Service Endpoints where subnet should have `Microsoft.Storage` en
 
 Check the private DNS zones for [Storage][1].
 
+## Access Policies
+
+- Stored access policies
+- Immutable blob storage
+  - Legal hold
+  - Time-based retention
+
 
 [1]: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#storage
 [2]: https://learn.microsoft.com/en-us/training/modules/create-azure-storage-account/2-decide-how-many-storage-accounts-you-need
