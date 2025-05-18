@@ -11,15 +11,8 @@ resource "azurerm_role_assignment" "keyvault_crypto_officer" {
   principal_id         = azurerm_user_assigned_identity.storage.principal_id
 }
 
-### Storage ###
-resource "random_string" "storage_name" {
-  length  = 5
-  special = false
-  upper   = false
-}
-
 resource "azurerm_storage_account" "default" {
-  name                       = "st${var.workload}${random_string.storage_name.result}"
+  name                       = "st${var.workload}"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   account_tier               = "Standard"
