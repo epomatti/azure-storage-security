@@ -74,7 +74,9 @@ TODO: Need to implement this.
 
 ### Service Endpoints
 
-Connection via Service Endpoints where subnet should have `Microsoft.Storage` endpoint assigned. 
+Connection via Service Endpoints where subnet should have `Microsoft.Storage` endpoint assigned.
+
+It does not require delegation.
 
 ### Private Link
 

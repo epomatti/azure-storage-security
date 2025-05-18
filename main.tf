@@ -7,8 +7,14 @@ terraform {
   }
 }
 
+resource "random_string" "affix" {
+  numeric     = true
+  length      = 3
+  min_numeric = 3
+}
+
 locals {
-  workload = "st0r4g3"
+  workload = "securestorage${random_string.affix.result}"
 }
 
 resource "azurerm_resource_group" "default" {
@@ -46,6 +52,9 @@ module "storage" {
   keyvault_app2_key_id    = module.keyvault.app2_key_id
 
   blob_versioning_enabled = var.blob_versioning_enabled
+
+  queue_encryption_key_type = var.queue_encryption_key_type
+  table_encryption_key_type = var.table_encryption_key_type
 }
 
 module "privatelink" {

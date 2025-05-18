@@ -50,6 +50,10 @@ resource "azurerm_storage_account" "default" {
   # Can only set on creation
   infrastructure_encryption_enabled = true
 
+  # CMK for additional services
+  queue_encryption_key_type = var.queue_encryption_key_type
+  table_encryption_key_type = var.table_encryption_key_type
+
   identity {
     type = "UserAssigned"
     identity_ids = [

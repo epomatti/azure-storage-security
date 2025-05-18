@@ -41,3 +41,11 @@ variable "keyvault_app2_key_id" {
 variable "blob_versioning_enabled" {
   type = bool
 }
+
+variable "queue_encryption_key_type" {
+  type = string
+}
+
+variable "table_encryption_key_type" {
+  type = string
+}
