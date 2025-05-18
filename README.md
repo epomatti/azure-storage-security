@@ -5,7 +5,7 @@ Implementing advanced security features with Azure Storage services.
 Set the initial variables:
 
 ```sh
-cp config/template.tfvars .auto.tfvars
+cp config/local.auto.tfvars .auto.tfvars
 ```
 
 Create the test infrastructure and storage:
