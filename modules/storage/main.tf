@@ -74,6 +74,12 @@ resource "azurerm_storage_account" "default" {
   }
 }
 
+### Containers ###
+resource "azurerm_storage_container" "default" {
+  name                  = "default"
+  storage_account_id    = azurerm_storage_account.default.id
+  container_access_type = "private"
+}
 
 ### Encryption Scopes ###
 resource "azurerm_storage_encryption_scope" "app1" {
