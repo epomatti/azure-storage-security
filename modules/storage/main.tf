@@ -60,7 +60,7 @@ resource "azurerm_storage_account" "default" {
   }
 
   # Networking
-  public_network_access_enabled = true
+  public_network_access = "Enabled" # TODO: SecuredByPerimeter ?
 
   # Internet / Microsoft routing
   network_rules {

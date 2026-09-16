@@ -9,11 +9,10 @@ resource "azurerm_private_dns_zone" "blob" {
 
 
 resource "azurerm_private_dns_zone_virtual_network_link" "blob" {
-  name                  = "blob-link"
-  resource_group_name   = var.resource_group_name
-  private_dns_zone_name = azurerm_private_dns_zone.blob.name
-  virtual_network_id    = var.vnet_id
-  registration_enabled  = true
+  name                 = "blob-link"
+  private_dns_zone_id  = azurerm_private_dns_zone.blob.id
+  virtual_network_id   = var.vnet_id
+  registration_enabled = true
 }
 
 resource "azurerm_private_endpoint" "default" {

@@ -10,8 +10,7 @@ resource "azurerm_key_vault" "default" {
   # Required for CMK operations
   purge_protection_enabled   = true
   soft_delete_retention_days = 7
-
-  enable_rbac_authorization = true
+  rbac_authorization_enabled = true
 }
 
 resource "azurerm_role_assignment" "current" {

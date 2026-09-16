@@ -12,7 +12,10 @@ resource "azurerm_subnet" "default" {
   address_prefixes     = ["10.0.0.0/24"]
 
   # Delegation is not required
-  service_endpoints = ["Microsoft.Storage"]
+  service_endpoint {
+    service = "Microsoft.Storage"
+  }
+
 }
 
 resource "azurerm_subnet" "private_endpoints" {
